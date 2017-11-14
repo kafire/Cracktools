@@ -138,6 +138,7 @@ class Engine(object):
         crack = cracks.get("ssh")
         if crack:
             for user,pwd in crack:
+		paramiko.util.log_to_file("info.log")
                 try:
                     ssh = paramiko.SSHClient()
                     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
